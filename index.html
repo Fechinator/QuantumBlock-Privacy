@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datenschutzerklärung - QuantumBlock</title>
+    <title>Privacy Policy - QuantumBlock</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -44,55 +44,299 @@
             border-left: 4px solid #3498db;
             border-radius: 4px;
         }
+
+        .lang-content {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
     </style>
+    <script>
+        function updateLanguage() {
+            var lang = navigator.language || navigator.userLanguage;
+
+            // Default to English
+            var langCode = 'en';
+
+            if (lang.startsWith('de')) {
+                langCode = 'de';
+            } else if (lang.startsWith('es')) {
+                langCode = 'es';
+            } else if (lang.startsWith('fr')) {
+                langCode = 'fr';
+            } else if (lang.startsWith('pt')) {
+                langCode = 'pt';
+            }
+
+            // Hide all
+            var contents = document.getElementsByClassName('lang-content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('visible');
+            }
+
+            // Show selected
+            var selectedContent = document.getElementById('content-' + langCode);
+            if (selectedContent) {
+                selectedContent.classList.add('visible');
+            } else {
+                // Fallback to English if something goes wrong
+                document.getElementById('content-en').classList.add('visible');
+            }
+
+            document.documentElement.lang = langCode;
+
+            // Update title based on language
+            var titles = {
+                'en': 'Privacy Policy - QuantumBlock',
+                'de': 'Datenschutzerklärung - QuantumBlock',
+                'es': 'Política de Privacidad - QuantumBlock',
+                'fr': 'Politique de Confidentialité - QuantumBlock',
+                'pt': 'Política de Privacidade - QuantumBlock'
+            };
+            document.title = titles[langCode] || titles['en'];
+        }
+        window.onload = updateLanguage;
+    </script>
 </head>
 
 <body>
     <div class="container">
-        <h1>Datenschutzerklärung für QuantumBlock</h1>
-        <p><strong>Zuletzt aktualisiert: 05. Dezember 2024</strong></p>
+        <!-- German Content -->
+        <div id="content-de" class="lang-content">
+            <h1>Datenschutzerklärung für QuantumBlock</h1>
+            <p><strong>Zuletzt aktualisiert: 05. Dezember 2024</strong></p>
 
-        <p>Wir bei QuantumBlock nehmen Ihre Privatsphäre sehr ernst. Diese Datenschutzerklärung erklärt, wie wir
-            Informationen sammeln, verwenden und schützen.</p>
+            <p>Wir bei QuantumBlock nehmen Ihre Privatsphäre sehr ernst. Diese Datenschutzerklärung erklärt, wie wir
+                Informationen sammeln, verwenden und schützen.</p>
 
-        <h2>1. Keine Datensammlung</h2>
-        <p>QuantumBlock ist so konzipiert, dass Ihre Privatsphäre an erster Stelle steht. <strong>Wir sammeln, speichern
-                oder übertragen keine persönlichen Daten an externe Server.</strong> Alle Daten bleiben lokal auf Ihrem
-            Gerät.</p>
+            <h2>1. Keine Datensammlung</h2>
+            <p>QuantumBlock ist so konzipiert, dass Ihre Privatsphäre an erster Stelle steht. <strong>Wir sammeln,
+                    speichern oder übertragen keine persönlichen Daten an externe Server.</strong> Alle Daten bleiben
+                lokal auf Ihrem Gerät.</p>
 
-        <h2>2. Verwendung des Accessibility Service (Bedienungshilfe)</h2>
-        <div class="highlight">
-            <p><strong>Wichtiger Hinweis:</strong> QuantumBlock verwendet die Android Accessibility Service API
-                (Bedienungshilfe).</p>
-            <p>Dieser Dienst wird <strong>ausschließlich</strong> für folgende Zwecke verwendet:</p>
+            <h2>2. Verwendung des Accessibility Service (Bedienungshilfe)</h2>
+            <div class="highlight">
+                <p><strong>Wichtiger Hinweis:</strong> QuantumBlock verwendet die Android Accessibility Service API
+                    (Bedienungshilfe).</p>
+                <p>Dieser Dienst wird <strong>ausschließlich</strong> für folgende Zwecke verwendet:</p>
+                <ul>
+                    <li>Um zu erkennen, welche App oder Webseite gerade im Vordergrund geöffnet ist.</li>
+                    <li>Um den Zugriff auf Apps und Webseiten zu blockieren, die Sie in Ihre Blockliste aufgenommen
+                        haben.</li>
+                </ul>
+                <p>Der Accessibility Service wird <strong>NICHT</strong> verwendet, um:</p>
+                <ul>
+                    <li>Ihre Eingaben (Tastaturanschläge) zu protokollieren.</li>
+                    <li>Persönliche oder sensible Daten zu sammeln.</li>
+                    <li>Daten an Dritte zu senden.</li>
+                </ul>
+            </div>
+
+            <h2>3. Berechtigungen</h2>
+            <p>Die App benötigt folgende Berechtigungen, um zu funktionieren:</p>
             <ul>
-                <li>Um zu erkennen, welche App oder Webseite gerade im Vordergrund geöffnet ist.</li>
-                <li>Um den Zugriff auf Apps und Webseiten zu blockieren, die Sie in Ihre Blockliste aufgenommen haben.
-                </li>
+                <li><strong>Nutzungsstatistiken:</strong> Um zu erkennen, welche Apps Sie verwenden.</li>
+                <li><strong>Über anderen Apps anzeigen:</strong> Um den Blockier-Bildschirm anzuzeigen.</li>
+                <li><strong>Benachrichtigungen:</strong> Um den Status des Schutzes anzuzeigen.</li>
+                <li><strong>Lokalisiert:</strong> Siehe englische Version für internationale Nutzer.</li>
             </ul>
-            <p>Der Accessibility Service wird <strong>NICHT</strong> verwendet, um:</p>
-            <ul>
-                <li>Ihre Eingaben (Tastaturanschläge) zu protokollieren.</li>
-                <li>Persönliche oder sensible Daten zu sammeln.</li>
-                <li>Daten an Dritte zu senden.</li>
-            </ul>
+
+            <h2>4. Änderungen dieser Richtlinie</h2>
+            <p>Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Änderungen werden auf dieser Seite
+                veröffentlicht.</p>
+
+            <h2>Kontakt</h2>
+            <p>Wenn Sie Fragen zu dieser Datenschutzerklärung haben, kontaktieren Sie uns bitte über die
+                GitHub-Repository-Seite.</p>
         </div>
 
-        <h2>3. Berechtigungen</h2>
-        <p>Die App benötigt folgende Berechtigungen, um zu funktionieren:</p>
-        <ul>
-            <li><strong>Nutzungsstatistiken:</strong> Um zu erkennen, welche Apps Sie verwenden.</li>
-            <li><strong>Über anderen Apps anzeigen:</strong> Um den Blockier-Bildschirm anzuzeigen.</li>
-            <li><strong>Benachrichtigungen:</strong> Um den Status des Schutzes anzuzeigen.</li>
-        </ul>
+        <!-- English Content -->
+        <div id="content-en" class="lang-content">
+            <h1>Privacy Policy for QuantumBlock</h1>
+            <p><strong>Last Updated: December 05, 2024</strong></p>
 
-        <h2>4. Änderungen dieser Richtlinie</h2>
-        <p>Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Änderungen werden auf dieser Seite
-            veröffentlicht.</p>
+            <p>At QuantumBlock, we take your privacy very seriously. This Privacy Policy explains how we collect, use,
+                and protect information.</p>
 
-        <h2>Kontakt</h2>
-        <p>Wenn Sie Fragen zu dieser Datenschutzerklärung haben, kontaktieren Sie uns bitte über die
-            GitHub-Repository-Seite.</p>
+            <h2>1. No Data Collection</h2>
+            <p>QuantumBlock is designed with your privacy as the top priority. <strong>We do not collect, store, or
+                    transmit any personal data to external servers.</strong> All data remains locally on your device.
+            </p>
+
+            <h2>2. Use of Accessibility Service</h2>
+            <div class="highlight">
+                <p><strong>Important Notice:</strong> QuantumBlock uses the Android Accessibility Service API.</p>
+                <p>This service is used <strong>exclusively</strong> for the following purposes:</p>
+                <ul>
+                    <li>To detect which app or website is currently open in the foreground.</li>
+                    <li>To block access to apps and websites that you have added to your blocklist.</li>
+                </ul>
+                <p>The Accessibility Service is <strong>NOT</strong> used to:</p>
+                <ul>
+                    <li>Log your keystrokes (keylogging).</li>
+                    <li>Collect personal or sensitive data.</li>
+                    <li>Send data to third parties.</li>
+                </ul>
+            </div>
+
+            <h2>3. Permissions</h2>
+            <p>The app requires the following permissions to function:</p>
+            <ul>
+                <li><strong>Usage Stats:</strong> To detect which apps you are using.</li>
+                <li><strong>Display Over Other Apps:</strong> To show the blocking screen.</li>
+                <li><strong>Notifications:</strong> To show the protection status.</li>
+            </ul>
+
+            <h2>4. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. Changes will be published on this page.</p>
+
+            <h2>Contact</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us via the GitHub repository page.
+            </p>
+        </div>
+
+        <!-- Spanish Content -->
+        <div id="content-es" class="lang-content">
+            <h1>Política de Privacidad de QuantumBlock</h1>
+            <p><strong>Última actualización: 05 de Diciembre de 2024</strong></p>
+
+            <p>En QuantumBlock, tomamos su privacidad muy en serio. Esta Política de Privacidad explica cómo
+                recopilamos, usamos y protegemos la información.</p>
+
+            <h2>1. Sin Recopilación de Datos</h2>
+            <p>QuantumBlock está diseñado con su privacidad como prioridad principal. <strong>No recopilamos,
+                    almacenamos ni transmitimos ningún dato personal a servidores externos.</strong> Todos los datos
+                permanecen localmente en su dispositivo.</p>
+
+            <h2>2. Uso del Servicio de Accesibilidad</h2>
+            <div class="highlight">
+                <p><strong>Aviso Importante:</strong> QuantumBlock utiliza la API del Servicio de Accesibilidad de
+                    Android.</p>
+                <p>Este servicio se utiliza <strong>exclusivamente</strong> para los siguientes fines:</p>
+                <ul>
+                    <li>Detectar qué aplicación o sitio web está abierto actualmente en primer plano.</li>
+                    <li>Bloquear el acceso a aplicaciones y sitios web que haya añadido a su lista de bloqueo.</li>
+                </ul>
+                <p>El Servicio de Accesibilidad <strong>NO</strong> se utiliza para:</p>
+                <ul>
+                    <li>Registrar sus pulsaciones de teclas (keylogging).</li>
+                    <li>Recopilar datos personales o sensibles.</li>
+                    <li>Enviar datos a terceros.</li>
+                </ul>
+            </div>
+
+            <h2>3. Permisos</h2>
+            <p>La aplicación requiere los siguientes permisos para funcionar:</p>
+            <ul>
+                <li><strong>Estadísticas de Uso:</strong> Para detectar qué aplicaciones está utilizando.</li>
+                <li><strong>Mostrar sobre otras apps:</strong> Para mostrar la pantalla de bloqueo.</li>
+                <li><strong>Notificaciones:</strong> Para mostrar el estado de la protección.</li>
+            </ul>
+
+            <h2>4. Cambios en esta Política</h2>
+            <p>Podemos actualizar esta Política de Privacidad ocasionalmente. Los cambios se publicarán en esta página.
+            </p>
+
+            <h2>Contacto</h2>
+            <p>Si tiene alguna pregunta sobre esta Política de Privacidad, por favor contáctenos a través de la página
+                del repositorio de GitHub.</p>
+        </div>
+
+        <!-- French Content -->
+        <div id="content-fr" class="lang-content">
+            <h1>Politique de Confidentialité de QuantumBlock</h1>
+            <p><strong>Dernière mise à jour : 05 Décembre 2024</strong></p>
+
+            <p>Chez QuantumBlock, nous prenons votre vie privée très au sérieux. Cette Politique de Confidentialité
+                explique comment nous collectons, utilisons et protégeons les informations.</p>
+
+            <h2>1. Aucune Collecte de Données</h2>
+            <p>QuantumBlock est conçu avec votre vie privée comme priorité absolue. <strong>Nous ne collectons, ne
+                    stockons ni ne transmettons aucune donnée personnelle à des serveurs externes.</strong> Toutes les
+                données restent localement sur votre appareil.</p>
+
+            <h2>2. Utilisation du Service d'Accessibilité</h2>
+            <div class="highlight">
+                <p><strong>Avis Important :</strong> QuantumBlock utilise l'API du Service d'Accessibilité Android.</p>
+                <p>Ce service est utilisé <strong>exclusivement</strong> aux fins suivantes :</p>
+                <ul>
+                    <li>Détecter quelle application ou site web est actuellement ouvert au premier plan.</li>
+                    <li>Bloquer l'accès aux applications et sites web que vous avez ajoutés à votre liste de blocage.
+                    </li>
+                </ul>
+                <p>Le Service d'Accessibilité n'est <strong>PAS</strong> utilisé pour :</p>
+                <ul>
+                    <li>Enregistrer vos frappes au clavier (keylogging).</li>
+                    <li>Collecter des données personnelles ou sensibles.</li>
+                    <li>Envoyer des données à des tiers.</li>
+                </ul>
+            </div>
+
+            <h2>3. Permissions</h2>
+            <p>L'application nécessite les permissions suivantes pour fonctionner :</p>
+            <ul>
+                <li><strong>Statistiques d'Utilisation :</strong> Pour détecter quelles applications vous utilisez.</li>
+                <li><strong>Afficher sur d'autres apps :</strong> Pour afficher l'écran de blocage.</li>
+                <li><strong>Notifications :</strong> Pour afficher le statut de la protection.</li>
+            </ul>
+
+            <h2>4. Modifications de cette Politique</h2>
+            <p>Nous pouvons mettre à jour cette Politique de Confidentialité de temps à autre. Les changements seront
+                publiés sur cette page.</p>
+
+            <h2>Contact</h2>
+            <p>Si vous avez des questions concernant cette Politique de Confidentialité, veuillez nous contacter via la
+                page du dépôt GitHub.</p>
+        </div>
+
+        <!-- Portuguese Content -->
+        <div id="content-pt" class="lang-content">
+            <h1>Política de Privacidade do QuantumBlock</h1>
+            <p><strong>Última atualização: 05 de Dezembro de 2024</strong></p>
+
+            <p>No QuantumBlock, levamos sua privacidade muito a sério. Esta Política de Privacidade explica como
+                coletamos, usamos e protegemos informações.</p>
+
+            <h2>1. Sem Coleta de Dados</h2>
+            <p>O QuantumBlock foi projetado com sua privacidade como prioridade máxima. <strong>Não coletamos,
+                    armazenamos ou transmitimos quaisquer dados pessoais para servidores externos.</strong> Todos os
+                dados permanecem localmente no seu dispositivo.</p>
+
+            <h2>2. Uso do Serviço de Acessibilidade</h2>
+            <div class="highlight">
+                <p><strong>Aviso Importante:</strong> O QuantumBlock usa a API do Serviço de Acessibilidade do Android.
+                </p>
+                <p>Este serviço é usado <strong>exclusivamente</strong> para os seguintes fins:</p>
+                <ul>
+                    <li>Detectar qual aplicativo ou site está aberto atualmente em primeiro plano.</li>
+                    <li>Bloquear o acesso a aplicativos e sites que você adicionou à sua lista de bloqueio.</li>
+                </ul>
+                <p>O Serviço de Acessibilidade <strong>NÃO</strong> é usado para:</p>
+                <ul>
+                    <li>Registrar seus toques no teclado (keylogging).</li>
+                    <li>Coletar dados pessoais ou sensíveis.</li>
+                    <li>Enviar dados a terceiros.</li>
+                </ul>
+            </div>
+
+            <h2>3. Permissões</h2>
+            <p>O aplicativo requer as seguintes permissões para funcionar:</p>
+            <ul>
+                <li><strong>Estatísticas de Uso:</strong> Para detectar quais aplicativos você está usando.</li>
+                <li><strong>Mostrar sobre outros apps:</strong> Para mostrar a tela de bloqueio.</li>
+                <li><strong>Notificações:</strong> Para mostrar o status da proteção.</li>
+            </ul>
+
+            <h2>4. Alterações nesta Política</h2>
+            <p>Podemos atualizar esta Política de Privacidade de tempos em tempos. As alterações serão publicadas nesta
+                página.</p>
+
+            <h2>Contato</h2>
+            <p>Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato conosco através da
+                página do repositório GitHub.</p>
+        </div>
     </div>
 </body>
 
